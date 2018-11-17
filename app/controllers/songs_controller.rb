@@ -10,6 +10,9 @@ class SongsController < ApplicationController
     else
       @songs = Song.all
     end
+    if Preference.all.first && Preference.all.first.song_sort_order
+      @songs = @songs.order(name: Preference.all.first.song_sort_order)
+    end
   end
 
   def show

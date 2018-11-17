@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :songs
 
   scope '/admin', module: 'admin' do
-  	resources :preferences, only: [:index, :show, :new, :create]
+  	resources :preferences, only: [:index, :show, :new, :create, :update]
   end
 
 end
